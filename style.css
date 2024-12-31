@@ -52,5 +52,5 @@ body.dark > header, body.dark > footer{
 }
 
 body.dark > #projects, body.dark > #skills{
-    color: #333;
+    background-color: #333;
 }
