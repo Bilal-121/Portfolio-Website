@@ -50,3 +50,10 @@ body.dark{
 body.dark > header, body.dark > footer{
     background-color: #333;
 }
+
+body.dark .bg-white {
+    background-color: #333; /* Or a darker shade for the dark mode */
+}
+body.dark .text-black {
+    color: #fff; /* Or another light color for contrast */
+}
