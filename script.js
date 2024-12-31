@@ -56,23 +56,20 @@ const projects = [{
 },
 ];
 
-//Rendering projects dynamicaly
-const projectsContainer = document.querySelector("#projects .grid");
-projects.forEach(project => {
-    const projectCard = `
-        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
-            <h3 class="text-xl font-bold">${project.title}</h3>
-            <p>${project.description}</p>
-            <a href="${project.link}" class="text-blue-500 underline">View Project</a>
-        </div>
-    `;
-    projectsContainer.innerHTML += projectCard;
-})
-
-
-//page dark mode
-
+// Toggle Dark Mode
 const toggleButton = document.getElementById("darkModeToggle");
 toggleButton.addEventListener("click", () => {
     document.body.classList.toggle("dark");
+
+    // Apply styles to dynamically generated project cards
+    const projectCards = document.querySelectorAll("#projects .grid > div");
+    projectCards.forEach(card => {
+        if (document.body.classList.contains("dark")) {
+            card.style.backgroundColor = "#333"; // Dark background
+            card.style.color = "#fff"; // White text
+        } else {
+            card.style.backgroundColor = ""; // Reset to default
+            card.style.color = ""; // Reset to default
+        }
+    });
 });
