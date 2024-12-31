@@ -52,7 +52,7 @@ body.dark > header, body.dark > footer{
 }
 
 body.dark .bg-white {
-    background-color: #333; /* Or a darker shade for the dark mode */
+    background-color: #338 !important; /* Or a darker shade for the dark mode */
 }
 body.dark .text-black {
     color: #fff; /* Or another light color for contrast */
