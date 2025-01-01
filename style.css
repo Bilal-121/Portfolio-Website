@@ -55,3 +55,9 @@ html.dark header, html.dark footer {
 /* html.dark > #projects > #section-content-container-1 > div, html.dark > #skills > #section-content-container-2 > div{
     background-color: #33336F;
 } */
+
+@media (max-width:600px){
+    #darkModeToggle{
+        top: 6.5rem;
+    }
+}
