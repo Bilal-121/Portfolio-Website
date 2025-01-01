@@ -61,15 +61,22 @@ const toggleButton = document.getElementById("darkModeToggle");
 toggleButton.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
-    // Apply styles to dynamically generated project cards
+    // Apply or remove dark mode styles for project cards and skills
     const projectCards = document.querySelectorAll("#projects .grid > div");
+    const skillsCards = document.querySelectorAll("#skills .grid > div");
     projectCards.forEach(card => {
         if (document.body.classList.contains("dark")) {
-            card.style.backgroundColor = "#333"; // Dark background
-            card.style.color = "#fff"; // White text
+            card.classList.add("dark-mode-card");
         } else {
-            card.style.backgroundColor = ""; // Reset to default
-            card.style.color = ""; // Reset to default
+            card.classList.remove("dark-mode-card");
+        }
+    });
+
+    skillsCards.forEach(card => {
+        if (document.body.classList.contains("dark")) {
+            card.classList.add("dark-mode-card");
+        } else {
+            card.classList.remove("dark-mode-card");
         }
     });
 });
