@@ -62,8 +62,7 @@ toggleButton.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
     // Apply or remove dark mode styles for project cards and skills
-    const projectCards = document.querySelectorAll("#projects .grid > div");
-    const skillsCards = document.querySelectorAll("#skills .grid > div");
+    const projectCards = document.querySelectorAll("#projects > .grid > div");
     projectCards.forEach(card => {
         if (document.body.classList.contains("dark")) {
             card.classList.add("dark-mode-card");
@@ -72,11 +71,4 @@ toggleButton.addEventListener("click", () => {
         }
     });
 
-    skillsCards.forEach(card => {
-        if (document.body.classList.contains("dark")) {
-            card.classList.add("dark-mode-card");
-        } else {
-            card.classList.remove("dark-mode-card");
-        }
-    });
 });

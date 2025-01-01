@@ -51,7 +51,7 @@ body.dark > header, body.dark > footer{
     background-color: #333;
 }
 
-.dark-mode-card {
+.dark-mode-card{
     background-color: #333 !important; /* Dark background */
     color: white !important; /* White text */
 }
