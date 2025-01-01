@@ -52,6 +52,6 @@ html.dark header, html.dark footer {
     background-color: #333333;
 }
 
-html.dark #projects, html.dark #skills {
-    background-color: #333333;
+html.dark > #projects > .grid > div, html.dark > #skills > .grid > div{
+    background-color: #33336F;
 }
