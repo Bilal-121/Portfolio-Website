@@ -74,3 +74,9 @@ const toggleDarkMode = document.getElementById("dark-mode-toggle");
 toggleDarkMode.addEventListener("click", () => {
     document.documentElement.classList.toggle("dark");
 });
+
+
+toggleDarkMode.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    console.log("Dark mode toggled:", document.documentElement.classList.contains("dark"));
+});
