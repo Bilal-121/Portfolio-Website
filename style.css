@@ -1,4 +1,8 @@
 /* general style for the website  */
+/* Add smooth transition for all elements */
+* {
+    transition: background-color 0.3s, color 0.3s;
+}
 
 body{
     font-family: "Playfair", serif;
@@ -41,24 +45,4 @@ footer{
     padding: 10px;
     background: #333;
     color: #fff;
-}
-
-body.dark {
-    background-color: #121212;
-    color: #fff;
-}
-
-body.dark header, body.dark footer {
-    background-color: #333;
-}
-
-#skills > .bg-white, #projects > .bg-white {
-    --tw-bg-opacity: 1;
-    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-}
-
-
-#skills > .dark-mode-sections, #projects > .dark-mode-sections {
-    background-color: #337 ;
-    color: white;
 }

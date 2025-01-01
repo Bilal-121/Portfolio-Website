@@ -56,26 +56,21 @@ const projects = [{
 },
 ];
 
-// Render projects dynamically
-const projectsContainer = document.querySelector('#projects .grid');
-projects.forEach(project => {
+const projectSection = document.querySelector("#projects .grid");
+
+projects.forEach((project) => {
     const projectCard = `
-        <div class="bg-white shadow-lg rounded-lg p-4">
+        <div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-lg rounded-lg p-4 transition-colors duration-300">
             <h3 class="text-xl font-bold">${project.title}</h3>
             <p>${project.description}</p>
-            <a href="${project.link}" class="text-blue-500 underline">View Project</a>
+            <a href="${project.link}" class="text-blue-500 dark:text-blue-300 underline">View Project</a>
         </div>
     `;
-    projectsContainer.innerHTML += projectCard;
+    projectSection.innerHTML += projectCard;
 });
 
-// Dark mode button 
-const toggleButton = document.getElementById('darkModeToggle');
-toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+const toggleDarkMode = document.getElementById("dark-mode-toggle");
 
-    ['#skills > .grid > div', '#projects > .grid > div'].forEach(id => {
-        const parent = document.querySelector(id);
-        parent.classList.toggle('.dark-mode-sections');
-    });
+toggleDarkMode.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
 });
