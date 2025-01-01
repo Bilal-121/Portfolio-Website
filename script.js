@@ -8,8 +8,9 @@ document.querySelectorAll("nav ul li a").forEach(link=>{
     });
 });
 
-//dark mode switch case
-const toggleButton = document.getElementById('darkModeToggle');
-toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+//page dark mode
+
+const toggleButton = document.getElementById("darkModeToggle");
+toggleButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
 });

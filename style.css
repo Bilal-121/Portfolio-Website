@@ -1,8 +1,4 @@
 /* general style for the website  */
-/* Add smooth transition for all elements */
-* {
-    transition: background-color 0.3s, color 0.3s;
-}
 
 body{
     font-family: "Playfair", serif;
@@ -47,11 +43,14 @@ footer{
     color: #fff;
 }
 
-body.dark {
+body.dark{
     background-color: #121212;
     color: #fff;
 }
+body.dark > header, body.dark > footer{
+    background-color: #333;
+}
 
-body.dark header, body.dark footer {
+body.dark > #projects, body.dark > #skills{
     background-color: #333;
 }
