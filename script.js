@@ -12,5 +12,5 @@ document.querySelectorAll("nav ul li a").forEach(link=>{
 
 const toggleButton = document.getElementById("darkModeToggle");
 toggleButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+    document.documentElement.classList.toggle("dark");
 });

@@ -43,14 +43,15 @@ footer{
     color: #fff;
 }
 
-body.dark{
+html.dark body {
     background-color: #121212;
-    color: #fff;
-}
-body.dark > header, body.dark > footer{
-    background-color: #333;
+    color: #ffffff;
 }
 
-body.dark > #projects, body.dark > #skills{
-    background-color: #333;
+html.dark header, html.dark footer {
+    background-color: #333333;
+}
+
+html.dark #projects, html.dark #skills {
+    background-color: #333333;
 }
