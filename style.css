@@ -43,15 +43,16 @@ footer{
     color: #fff;
 }
 
-body.dark{
+body.dark {
     background-color: #121212;
     color: #fff;
 }
-body.dark > header, body.dark > footer{
+
+body.dark header, body.dark footer {
     background-color: #333;
 }
 
-.dark-mode-card{
-    background-color: #333 !important; /* Dark background */
-    color: white !important; /* White text */
+#skills > .dark-mode-sections, #projects > .dark-mode-sections {
+    background-color: #337 !important;
+    color: white !important;
 }

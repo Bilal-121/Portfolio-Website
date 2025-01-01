@@ -57,40 +57,40 @@ const projects = [{
 ];
 
 // Render projects dynamically
-const projectsContainer = document.querySelector("#projects .grid");
-if (projectsContainer) {
-    projects.forEach(project => {
-        const projectCard = `
-            <div class="bg-white shadow-lg rounded-lg p-4 dark-mode-card">
-                <h3 class="text-xl font-bold">${project.title}</h3>
-                <p>${project.description}</p>
-                <a href="${project.link}" class="text-blue-500 underline">View Project</a>
-            </div>
-        `;
-        projectsContainer.innerHTML += projectCard;
-    });
-}
+const projectsContainer = document.querySelector('#projects .grid');
+projects.forEach(project => {
+    const projectCard = `
+        <div class="bg-white shadow-lg rounded-lg p-4">
+            <h3 class="text-xl font-bold">${project.title}</h3>
+            <p>${project.description}</p>
+            <a href="${project.link}" class="text-blue-500 underline">View Project</a>
+        </div>
+    `;
+    projectsContainer.innerHTML += projectCard;
+});
+
+// Dark mode button 
+const toggleButton = document.getElementById('darkModeToggle');
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+});
 
 
-
-
-const toggleButton = document.getElementById("darkModeToggle");
-
-toggleButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    // Check if dark mode is active
-    const isDarkMode = document.body.classList.contains("dark");
-
-    // Update dynamically rendered project cards
-    const projectCards = document.querySelectorAll("#projects .grid > div");
-    projectCards.forEach(card => {
-        if (isDarkMode) {
-            card.style.backgroundColor = "#333"; // Dark background
-            card.style.color = "#fff"; // White text
-        } else {
-            card.style.backgroundColor = ""; // Reset to default
-            card.style.color = ""; // Reset to default
+document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    ['#skills', '#projects'].forEach(id => {
+        const parent = document.querySelector(id);
+        if (parent) {
+            const children = parent.querySelectorAll('.bg-white, .dark-mode-sections');
+            children.forEach(child => {
+                if (body.classList.contains('dark')) {
+                    child.classList.remove('bg-white');
+                    child.classList.add('dark-mode-sections');
+                } else {
+                    child.classList.remove('dark-mode-sections');
+                    child.classList.add('bg-white');
+                }
+            });
         }
     });
 });
