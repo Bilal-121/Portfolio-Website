@@ -73,24 +73,9 @@ projects.forEach(project => {
 const toggleButton = document.getElementById('darkModeToggle');
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-});
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const body = document.body;
-    ['#skills', '#projects'].forEach(id => {
+    ['#skills > .grid > div', '#projects > .grid > div'].forEach(id => {
         const parent = document.querySelector(id);
-        if (parent) {
-            const children = parent.querySelectorAll('.bg-white, .dark-mode-sections');
-            children.forEach(child => {
-                if (body.classList.contains('dark')) {
-                    child.classList.remove('bg-white');
-                    child.classList.add('dark-mode-sections');
-                } else {
-                    child.classList.remove('dark-mode-sections');
-                    child.classList.add('bg-white');
-                }
-            });
-        }
+        parent.classList.toggle('.dark-mode-sections');
     });
 });
