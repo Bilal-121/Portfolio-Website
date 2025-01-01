@@ -56,19 +56,41 @@ const projects = [{
 },
 ];
 
-// Toggle Dark Mode
+// Render projects dynamically
+const projectsContainer = document.querySelector("#projects .grid");
+if (projectsContainer) {
+    projects.forEach(project => {
+        const projectCard = `
+            <div class="bg-white shadow-lg rounded-lg p-4 dark-mode-card">
+                <h3 class="text-xl font-bold">${project.title}</h3>
+                <p>${project.description}</p>
+                <a href="${project.link}" class="text-blue-500 underline">View Project</a>
+            </div>
+        `;
+        projectsContainer.innerHTML += projectCard;
+    });
+}
+
+
+
+
 const toggleButton = document.getElementById("darkModeToggle");
+
 toggleButton.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
-    // Apply or remove dark mode styles for project cards and skills
-    const projectCards = document.querySelectorAll("#projects > .grid > div");
+    // Check if dark mode is active
+    const isDarkMode = document.body.classList.contains("dark");
+
+    // Update dynamically rendered project cards
+    const projectCards = document.querySelectorAll("#projects .grid > div");
     projectCards.forEach(card => {
-        if (document.body.classList.contains("dark")) {
-            card.classList.add("dark-mode-card");
+        if (isDarkMode) {
+            card.style.backgroundColor = "#333"; // Dark background
+            card.style.color = "#fff"; // White text
         } else {
-            card.classList.remove("dark-mode-card");
+            card.style.backgroundColor = ""; // Reset to default
+            card.style.color = ""; // Reset to default
         }
     });
-
 });
